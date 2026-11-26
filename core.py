@@ -10,6 +10,21 @@ ALIAS_SKILL = {
     "R": ["R", "r", "R language"],
     "PYTHON": ["PYTHON", "python", "PY", "python language", "PYTHON language"],
     "scikit-learn": ["sklearn", "scikit-learn"],
+    "numpy" : ['numpy', "Numpy", "np"],
+    "pandas" : ['pandas', "Pandas", "pd"],
+    "Java": ["java"],
+    "JavaScript": ["javascript", "js"],
+    "TypeScript": ["typescript", "ts"],
+    "C++": ["c++", "cpp"],
+    "C#": ["c#", "c sharp"],
+    "Go": ["golang", "go language"],
+    "Power BI": ["power bi", "powerbi"],
+    "Tableau": ["tableau"],
+    "Excel": ["microsoft excel", "excel"],
+    "AWS": ["aws", "amazon web services"],
+    "Azure": ["azure", "microsoft azure"],
+    "Docker": ["docker"],
+    "Kubernetes": ["kubernetes", "k8s"],
 }
 
 
@@ -63,7 +78,7 @@ def check_all():
             if isinstance(skills, list):
                 for skill in skills:
                     for key in ALIAS_SKILL.keys():
-                        if skill in ALIAS_SKILL[key]:
+                        if str(skill).casefold() in ALIAS_SKILL[key]:
                             if not pos in skills_per_pos.keys():
                                 skills_per_pos[pos] = dict()
                             skills_per_pos[pos][key] = skills_per_pos[pos].get(key, 0) + 1
